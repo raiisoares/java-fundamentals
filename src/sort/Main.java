@@ -13,9 +13,9 @@ public class Main {
         int op;
         String menuView = """
                 \n******** List Sorter ********
-                Choose an option:
-                1: Create and sort a list of numbers.
-                0: Exit app.
+                Escolha uma opção:
+                1: Criar e ordenar um alista de números.
+                0: Sair da aplicação.
                 """;
 
         do {
@@ -26,7 +26,7 @@ public class Main {
                 case 1:
                     List<Integer> list = getList(scanner);
                     Integer[] sortedArr = quicksort(list.toArray(new Integer[0]), 0, list.size() - 1);
-                    System.out.print("Sorted List: ");
+                    System.out.print("Lista ordenada: ");
                     for (int item : sortedArr) {
                         System.out.print(item + " ");
                     }
@@ -34,10 +34,10 @@ public class Main {
                 case 0:
                     loop = false;
                     scanner.close();
-                    System.out.println("Thanks for using this app.");
+                    System.out.println("Encerrando a aplicação.");
                     break;
                 default:
-                    System.out.println("Invalid option.");
+                    System.out.println("Opção inválida.");
                     break;
             }
 
@@ -49,9 +49,9 @@ public class Main {
         boolean loop = true;
         int op;
         String listView = """
-                 \nChoose an option:
-                 1: Add number.
-                 2: Sort the list.
+                 \nEscolha uma opção:
+                 1: Adicionar um número.
+                 2: Ordenar a lista.
                 """;
 
         do {
@@ -60,11 +60,11 @@ public class Main {
 
             switch (op) {
                 case 1:
-                    System.out.println("Add a number on list:");
+                    System.out.println("Adicionar um número na lista:");
                     op = scanner.nextInt();
                     list.add(op);
 
-                    System.out.println("Current List: ");
+                    System.out.println("Lista atual: ");
                     for (Integer i : list) {
                         System.out.print(i + " ");
                     }
@@ -73,7 +73,7 @@ public class Main {
                     loop = false;
                     break;
                 default:
-                    System.out.println("Invalid option.");
+                    System.out.println("Opção inválida.");
                     break;
             }
 
