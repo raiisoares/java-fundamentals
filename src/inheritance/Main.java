@@ -6,6 +6,16 @@ import java.util.UUID;
 public class Main {
     public static void main(String[] args) {
         Store store = new Store();
+        seed(store);
+
+        System.out.println(store.getOrders());
+
+        System.out.println(store.findOrderById(UUID.fromString("08885f0c-f950-449e-9f02-7fb58ae4162c")));
+
+        System.out.printf("Total revenue: R$%.2f %n", store.getRevenue());
+    }
+
+    private static void seed(Store store) {
         Client client01 = new Client("Cliente 01", "client 01 Address");
         Client client02 = new Client("Cliente 02", "client 02 Address");
         Client client03 = new Client("Cliente 03", "client 03 Address");
@@ -34,11 +44,5 @@ public class Main {
         store.createExpressOrder(client02, List.of(orderItem01, orderItem02, orderItem03), 35d);
         store.createExpressOrder(client03, List.of(orderItem02, orderItem03), 52.41);
         store.createExpressOrder(client04, List.of(orderItem05, orderItem04), 74d);
-
-        System.out.println(store.getOrders());
-
-        System.out.println(store.findOrderById(UUID.fromString("08885f0c-f950-449e-9f02-7fb58ae4162c")));
-
-        System.out.printf("Total revenue: R$%.2f %n", store.getRevenue());
     }
 }
