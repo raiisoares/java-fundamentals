@@ -6,13 +6,13 @@ import java.util.UUID;
 
 public class SimpleOrder implements Order {
     private final UUID orderId;
-    private final Client client;
+    private final Customer customer;
     private final LocalDateTime orderDate;
     private final List<OrderItem> items;
 
-    public SimpleOrder(Client client, List<OrderItem> items) {
+    public SimpleOrder(Customer customer, List<OrderItem> items) {
         this.orderId = UUID.randomUUID();
-        this.client = client;
+        this.customer = customer;
         this.orderDate = LocalDateTime.now();
         this.items = items;
     }
@@ -23,8 +23,8 @@ public class SimpleOrder implements Order {
     }
 
     @Override
-    public Client getClient() {
-        return this.client;
+    public Customer getClient() {
+        return this.customer;
     }
 
     @Override

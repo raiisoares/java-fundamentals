@@ -7,7 +7,7 @@ import java.util.UUID;
 public interface Order {
     UUID getId();
 
-    Client getClient();
+    Customer getClient();
 
     LocalDateTime getOrderDate();
 

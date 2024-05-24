@@ -6,14 +6,14 @@ import java.util.UUID;
 
 public class ExpressOrder implements Order {
     private final UUID orderId;
-    private final Client client;
+    private final Customer customer;
     private final LocalDateTime orderDate;
     private final List<OrderItem> items;
     private final double expressShippingCost;
 
-    public ExpressOrder(Client client, List<OrderItem> items, double expressShippingCost) {
+    public ExpressOrder(Customer customer, List<OrderItem> items, double expressShippingCost) {
         this.orderId = UUID.randomUUID();
-        this.client = client;
+        this.customer = customer;
         this.orderDate = LocalDateTime.now();
         this.items = items;
         this.expressShippingCost = expressShippingCost;
@@ -25,8 +25,8 @@ public class ExpressOrder implements Order {
     }
 
     @Override
-    public Client getClient() {
-        return this.client;
+    public Customer getClient() {
+        return this.customer;
     }
 
     @Override
